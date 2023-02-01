@@ -1,6 +1,8 @@
 [GLOBAL]
 pants_version = "2.15.0rc2"
 colors = true
+pantsd = false
+print_stacktrace = true
 build_patterns = ["PANTS", "PANTS.root"]
 
 backend_packages = [
