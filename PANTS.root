@@ -1,0 +1,7 @@
+docker_environment(
+    name="docker",
+    image="python:3.9.13-slim-buster",
+)
+
+
+__defaults__(all=dict(environment="docker"))

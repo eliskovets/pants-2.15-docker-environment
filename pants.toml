@@ -1,0 +1,31 @@
+[GLOBAL]
+pants_version = "2.15.0rc2"
+colors = true
+build_patterns = ["PANTS", "PANTS.root"]
+
+backend_packages = [
+    # order is relevant here, since we want to minimize the need for lint and fmt reruns
+    "pants.backend.python.lint.pyupgrade",
+    "pants.backend.python.lint.autoflake",
+    "pants.backend.python.lint.docformatter",
+    "pants.backend.python.lint.isort",
+    "pants.backend.python.lint.flake8",
+    "pants.backend.python.lint.pylint",
+    "pants.backend.python.typecheck.mypy",
+    "pants.backend.python",
+    "pants.backend.shell.lint.shellcheck",
+    "pants.backend.shell.lint.shfmt",
+    "pants.backend.shell",
+    "pants.backend.awslambda.python",
+    "pants.backend.plugin_development", # for the pants_requirements macro
+    "pants.backend.docker",
+    "pants.backend.docker.lint.hadolint",
+]
+
+[source]
+root_patterns = [
+    "/src",
+]
+
+[environments-preview.names]
+docker = "//:docker"
