@@ -29,5 +29,9 @@ root_patterns = [
     "/src",
 ]
 
+[anonymous-telemetry]
+enabled=true
+repo_id = "c6768746-fbd6-4a10-9370-7b71c4d4b5bf"
+
 [environments-preview.names]
 docker = "//:docker"
